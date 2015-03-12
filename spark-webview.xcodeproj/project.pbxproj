@@ -14,6 +14,7 @@
 		09AA52AE1AABD73C005E3603 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AA52AD1AABD73C005E3603 /* Images.xcassets */; };
 		09AA52B11AABD73C005E3603 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AA52AF1AABD73C005E3603 /* LaunchScreen.xib */; };
 		09AA52BD1AABD73C005E3603 /* spark_webviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AA52BC1AABD73C005E3603 /* spark_webviewTests.m */; };
+		09F532C01AB2176700CCE585 /* SparkWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F532BF1AB2176700CCE585 /* SparkWebview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		09AA52B61AABD73C005E3603 /* spark-webviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "spark-webviewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AA52BB1AABD73C005E3603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09AA52BC1AABD73C005E3603 /* spark_webviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spark_webviewTests.m; sourceTree = "<group>"; };
+		09F532BE1AB2176700CCE585 /* SparkWebview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkWebview.h; sourceTree = "<group>"; };
+		09F532BF1AB2176700CCE585 /* SparkWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkWebview.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +88,8 @@
 				09AA52A51AABD73C005E3603 /* AppDelegate.m */,
 				09AA52A71AABD73C005E3603 /* ViewController.h */,
 				09AA52A81AABD73C005E3603 /* ViewController.m */,
+				09F532BE1AB2176700CCE585 /* SparkWebview.h */,
+				09F532BF1AB2176700CCE585 /* SparkWebview.m */,
 				09AA52AA1AABD73C005E3603 /* Main.storyboard */,
 				09AA52AD1AABD73C005E3603 /* Images.xcassets */,
 				09AA52AF1AABD73C005E3603 /* LaunchScreen.xib */,
@@ -222,6 +227,7 @@
 				09AA52A91AABD73C005E3603 /* ViewController.m in Sources */,
 				09AA52A61AABD73C005E3603 /* AppDelegate.m in Sources */,
 				09AA52A31AABD73C005E3603 /* main.m in Sources */,
+				09F532C01AB2176700CCE585 /* SparkWebview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +418,7 @@
 				09AA52C21AABD73C005E3603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		09AA52C31AABD73C005E3603 /* Build configuration list for PBXNativeTarget "spark-webviewTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +427,7 @@
 				09AA52C51AABD73C005E3603 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
