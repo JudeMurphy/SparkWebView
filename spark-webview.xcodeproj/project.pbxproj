@@ -7,14 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0974BC701ACB3DE800A50630 /* SparkWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974BC6D1ACB3DE800A50630 /* SparkWebview.m */; };
+		0974BC711ACB3DE800A50630 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0974BC6F1ACB3DE800A50630 /* ViewController.m */; };
 		09AA52A31AABD73C005E3603 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AA52A21AABD73C005E3603 /* main.m */; };
 		09AA52A61AABD73C005E3603 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AA52A51AABD73C005E3603 /* AppDelegate.m */; };
-		09AA52A91AABD73C005E3603 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AA52A81AABD73C005E3603 /* ViewController.m */; };
 		09AA52AC1AABD73C005E3603 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 09AA52AA1AABD73C005E3603 /* Main.storyboard */; };
 		09AA52AE1AABD73C005E3603 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 09AA52AD1AABD73C005E3603 /* Images.xcassets */; };
 		09AA52B11AABD73C005E3603 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 09AA52AF1AABD73C005E3603 /* LaunchScreen.xib */; };
 		09AA52BD1AABD73C005E3603 /* spark_webviewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 09AA52BC1AABD73C005E3603 /* spark_webviewTests.m */; };
-		09F532C01AB2176700CCE585 /* SparkWebview.m in Sources */ = {isa = PBXBuildFile; fileRef = 09F532BF1AB2176700CCE585 /* SparkWebview.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,21 +28,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0974BC6C1ACB3DE800A50630 /* SparkWebview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkWebview.h; sourceTree = "<group>"; };
+		0974BC6D1ACB3DE800A50630 /* SparkWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkWebview.m; sourceTree = "<group>"; };
+		0974BC6E1ACB3DE800A50630 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		0974BC6F1ACB3DE800A50630 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		09AA529D1AABD73C005E3603 /* spark-webview.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spark-webview.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AA52A11AABD73C005E3603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09AA52A21AABD73C005E3603 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		09AA52A41AABD73C005E3603 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		09AA52A51AABD73C005E3603 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		09AA52A71AABD73C005E3603 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		09AA52A81AABD73C005E3603 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		09AA52AB1AABD73C005E3603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		09AA52AD1AABD73C005E3603 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		09AA52B01AABD73C005E3603 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		09AA52B61AABD73C005E3603 /* spark-webviewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "spark-webviewTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		09AA52BB1AABD73C005E3603 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		09AA52BC1AABD73C005E3603 /* spark_webviewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = spark_webviewTests.m; sourceTree = "<group>"; };
-		09F532BE1AB2176700CCE585 /* SparkWebview.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SparkWebview.h; sourceTree = "<group>"; };
-		09F532BF1AB2176700CCE585 /* SparkWebview.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SparkWebview.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,13 +86,13 @@
 			children = (
 				09AA52A41AABD73C005E3603 /* AppDelegate.h */,
 				09AA52A51AABD73C005E3603 /* AppDelegate.m */,
-				09AA52A71AABD73C005E3603 /* ViewController.h */,
-				09AA52A81AABD73C005E3603 /* ViewController.m */,
-				09F532BE1AB2176700CCE585 /* SparkWebview.h */,
-				09F532BF1AB2176700CCE585 /* SparkWebview.m */,
 				09AA52AA1AABD73C005E3603 /* Main.storyboard */,
 				09AA52AD1AABD73C005E3603 /* Images.xcassets */,
 				09AA52AF1AABD73C005E3603 /* LaunchScreen.xib */,
+				0974BC6C1ACB3DE800A50630 /* SparkWebview.h */,
+				0974BC6D1ACB3DE800A50630 /* SparkWebview.m */,
+				0974BC6E1ACB3DE800A50630 /* ViewController.h */,
+				0974BC6F1ACB3DE800A50630 /* ViewController.m */,
 				09AA52A01AABD73C005E3603 /* Supporting Files */,
 			);
 			path = "spark-webview";
@@ -224,10 +224,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				09AA52A91AABD73C005E3603 /* ViewController.m in Sources */,
 				09AA52A61AABD73C005E3603 /* AppDelegate.m in Sources */,
 				09AA52A31AABD73C005E3603 /* main.m in Sources */,
-				09F532C01AB2176700CCE585 /* SparkWebview.m in Sources */,
+				0974BC711ACB3DE800A50630 /* ViewController.m in Sources */,
+				0974BC701ACB3DE800A50630 /* SparkWebview.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

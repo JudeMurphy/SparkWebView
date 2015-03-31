@@ -25,32 +25,32 @@
 
 #define screenWidth self.view.frame.size.width
 #define screenHeight self.view.frame.size.height
-#define appName @"Spark"
+
+@interface SparkWebview ()
+
+@property (nonatomic, readwrite, strong) NSURL *urlToLoad;
+@property (nonatomic, readwrite, strong) UIToolbar *toolbar;
+@property (nonatomic, readwrite, strong) WKWebView *webView;
+@property (nonatomic, readwrite, strong) NSURLRequest *nsrequest;
+
+@property (nonatomic, readwrite, strong) NSArray *itemsArray;
+@property (nonatomic, readwrite, strong) UIBarButtonItem *spacer;
+@property (nonatomic, readwrite, strong) UIBarButtonItem *backButton;
+@property (nonatomic, readwrite, strong) UIBarButtonItem *shareButton;
+@property (nonatomic, readwrite, strong) UIBarButtonItem *refreshButton;
+@property (nonatomic, readwrite, strong) UIBarButtonItem *dismissViewControllerButton;
+
+@property (nonatomic, readwrite, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, readwrite, strong) UIActivityViewController *shareController;
+
+@end
 
 @implementation SparkWebview
-
-- (id)init
-{
-    if (self = [super init])
-    {
-    }
-    return self;
-}
-
-+ (id)sharedInstance
-{
-    static SparkWebview *sharedMyManager = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        sharedMyManager = [[self alloc] init];
-    });
-    return sharedMyManager;
-}
 
 -(void) viewDidLoad
 {
     [self setNeedsStatusBarAppearanceUpdate];
-    [[self view] setBackgroundColor: [self colorWithHexString: @"FF4300"]];
+    [[self view] setBackgroundColor: [self colorWithHexString: [self backgroundColorWithHexString]]];
 
     _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite];
     [[self activityIndicator] setCenter: CGPointMake(screenWidth/2, screenHeight/2)];
@@ -60,7 +60,7 @@
     [[self toolbar] setCenter: CGPointMake(screenWidth/2, screenHeight-44)];
     [[self toolbar] setBarStyle: UIBarStyleDefault];
     [[self toolbar] sizeToFit];
-    [[self toolbar] setBarTintColor: [self colorWithHexString: @"FF4300"]];
+    [[self toolbar] setBarTintColor: [self colorWithHexString: [self toolBarColorWithHexString]]];
     [self.view addSubview: [self toolbar]];
     
     _spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target: self action:nil];
@@ -82,8 +82,8 @@
     [[self webView] setCenter: CGPointMake(screenWidth/2, screenHeight/2 - 10)];
     [[self webView] setNavigationDelegate: self];
     
-    _url = [NSURL URLWithString: [self urlToLoad]];
-    _nsrequest = [NSURLRequest requestWithURL: [self url]];
+    _urlToLoad = [NSURL URLWithString: [self url]];
+    _nsrequest = [NSURLRequest requestWithURL: [self urlToLoad]];
     [[self webView] loadRequest: [self nsrequest]];
     [[self webView] setAlpha: 0.0];
     [[self view] addSubview: [self webView]];
@@ -131,18 +131,13 @@
 
 -(void) sharedButtonPressed
 {
-    _shareController = [[UIActivityViewController alloc] initWithActivityItems: @[[NSString stringWithFormat: @"Check out this page: %@ shared via %@.", [[self webView] URL], appName]] applicationActivities: nil];
+    _shareController = [[UIActivityViewController alloc] initWithActivityItems: @[[NSString stringWithFormat: @"Check out this page: %@ shared via %@.", [[self webView] URL], [self appName]]] applicationActivities: nil];
     [self presentViewController: [self shareController] animated: YES completion: nil];
 }
 
 -(void) dismissViewControllerButtonPressed
 {
     [self dismissViewControllerAnimated: YES completion: nil];
-}
-
--(void) setUrlToLoad: (NSString *) urlToLoad
-{
-    _urlToLoad = urlToLoad;
 }
 
 //SPARKWEBVIE CLASS HELPER METHODS

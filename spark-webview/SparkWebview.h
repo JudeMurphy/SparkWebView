@@ -24,22 +24,9 @@
 
 @interface SparkWebview : UIViewController <WKNavigationDelegate>
 
-@property (nonatomic, strong) NSURL *url;
-@property (nonatomic, strong) UIToolbar *toolbar;
-@property (nonatomic, strong) WKWebView *webView;
-@property (nonatomic, strong) NSString *urlToLoad;
-@property (nonatomic, strong) NSURLRequest *nsrequest;
-
-@property (nonatomic, strong) NSArray *itemsArray;
-@property (nonatomic, strong) UIBarButtonItem *spacer;
-@property (nonatomic, strong) UIBarButtonItem *backButton;
-@property (nonatomic, strong) UIBarButtonItem *shareButton;
-@property (nonatomic, strong) UIBarButtonItem *refreshButton;
-@property (nonatomic, strong) UIBarButtonItem *dismissViewControllerButton;
-
-@property (strong, nonatomic) UIActivityViewController *shareController;
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
-
-+ (id)sharedInstance;
+@property (nonatomic, readwrite, strong) NSString *url;
+@property (nonatomic, readwrite, strong) NSString *appName;
+@property (nonatomic, readwrite, strong) NSString *toolBarColorWithHexString;
+@property (nonatomic, readwrite, strong) NSString *backgroundColorWithHexString;
 
 @end
