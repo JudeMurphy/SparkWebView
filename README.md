@@ -4,15 +4,19 @@ This is Spark Apps, LLC's easily importable WKWebview Singleton ViewController c
 
 ### How do I get set up? ###
 
-1. Import SparkWebview.h/SparkWebview.m into your project.
+Import SparkWebview.h/SparkWebview.m into your project.
 
-2. Use #import "SparkWebview.h" in any ViewController you want to use the SparkWebview in.
+#import "SparkWebview.h" in your selected ViewController.
 
-3. Inside SparkWebview.m, change the #define appName @"Spark" to #define appName @"YOURAPPNAME".
+Use the following code to present SparkWebview:
+SparkWebview *webview = [[SparkWebview alloc] init];
+[webview setUrl: @"http://google.com"];
+[webview setAppName: @"Spark"];
+[webview setToolBarColorWithHexString: @"#FF4300"];
+[webview setBackgroundColorWithHexString: @"#FF4300"];
+[self presentViewController: webview animated: YES completion: nil];
 
-4. Set up the URL you want to load: [[SparkWebview sharedInstance] setUrlToLoad: @"http://www.sparkapps.com"];
-
-5. Present the view controller: [self presentViewController: [SparkWebview sharedInstance] animated: YES completion:nil];
+Change whatever you would like for further customizablity.
 
 ### Contribution guidelines ###
 
