@@ -9,11 +9,11 @@ Import "SparkWebview.h" in your selected ViewController.
 
 Use the following code to present SparkWebview:
 SparkWebview *webview = [[SparkWebview alloc] init];
-  [webview setUrl: @"http://google.com"];
-  [webview setAppName: @"Spark"];
-  [webview setToolBarColorWithHexString: @"#FF4300"];
-  [webview setBackgroundColorWithHexString: @"#FF4300"];
-  [self presentViewController: webview animated: YES completion: nil];
+<br />[webview setUrl: @"http://google.com"];
+<br />[webview setAppName: @"Spark"];
+<br />[webview setToolBarColorWithHexString: @"#FF4300"];
+<br />[webview setBackgroundColorWithHexString: @"#FF4300"];
+<br />[self presentViewController: webview animated: YES completion: nil];
 
 Change whatever you would like for further customizablity.
 
