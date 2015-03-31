@@ -5,7 +5,7 @@ This is Spark Apps, LLC's easily importable WKWebview Singleton ViewController c
 ### How do I get set up? ###
 
 Import SparkWebview.h/SparkWebview.m files into your project.
-Import "SparkWebview.h" in your selected ViewController.
+<br />Import "SparkWebview.h" in your selected ViewController.
 
 Use the following code to present SparkWebview:
 <br />SparkWebview *webview = [[SparkWebview alloc] init];
