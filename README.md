@@ -9,7 +9,7 @@ Import SparkWebview.h/SparkWebview.m files into your project.
 
 Use the following code to present SparkWebview:
 <br />SparkWebview *webview = [[SparkWebview alloc] init];
-<br />[webview setUrl: @"http://google.com"];
+<br />[webview setUrl: @"http://sparkapps.com"];
 <br />[webview setAppName: @"Spark"];
 <br />[webview setToolBarColorWithHexString: @"#FF4300"];
 <br />[webview setBackgroundColorWithHexString: @"#FF4300"];
