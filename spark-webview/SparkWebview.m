@@ -52,38 +52,38 @@
     [self setNeedsStatusBarAppearanceUpdate];
     [[self view] setBackgroundColor: [self colorWithHexString: [self backgroundColorWithHexString]]];
 
-    _activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite];
+    [self setActivityIndicator: [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite]];
     [[self activityIndicator] setCenter: CGPointMake(screenWidth/2, screenHeight/2)];
     [[self view] addSubview: [self activityIndicator]];
     
-    _toolbar = [[UIToolbar alloc]initWithFrame: CGRectMake(0, 0, screenWidth, 0)];
+    [self setToolbar: [[UIToolbar alloc]initWithFrame: CGRectMake(0, 0, screenWidth, 0)]];
     [[self toolbar] setCenter: CGPointMake(screenWidth/2, screenHeight-44)];
     [[self toolbar] setBarStyle: UIBarStyleDefault];
     [[self toolbar] sizeToFit];
     [[self toolbar] setBarTintColor: [self colorWithHexString: [self toolBarColorWithHexString]]];
     [self.view addSubview: [self toolbar]];
     
-    _spacer = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target: self action:nil];
-    _backButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem : UIBarButtonSystemItemRewind target: self action: @selector(backButtonPressed)];
-    _shareButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAction target:self action:@selector(sharedButtonPressed)];
-    _refreshButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemRefresh target: self action: @selector(refreshButtonPressed)];
-    _dismissViewControllerButton = [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:self action:@selector(dismissViewControllerButtonPressed)];
+    [self setSpacer: [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFlexibleSpace target: self action:nil]];
+    [self setBackButton: [[UIBarButtonItem alloc] initWithBarButtonSystemItem : UIBarButtonSystemItemRewind target: self action: @selector(backButtonPressed)]];
+    [self setShareButton: [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAction target:self action:@selector(sharedButtonPressed)]];
+    [self setRefreshButton: [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemRefresh target: self action: @selector(refreshButtonPressed)]];
+    [self setDismissViewControllerButton: [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:self action:@selector(dismissViewControllerButtonPressed)]];
 
     [[self backButton] setTintColor: [UIColor whiteColor]];
     [[self shareButton] setTintColor: [UIColor whiteColor]];
     [[self refreshButton] setTintColor: [UIColor whiteColor]];
     [[self dismissViewControllerButton] setTintColor: [UIColor whiteColor]];
     
-    _itemsArray = [NSArray arrayWithObjects: [self dismissViewControllerButton], [self spacer], [self shareButton], [self spacer], [self backButton], [self spacer], [self refreshButton], nil];
+    [self setItemsArray: [NSArray arrayWithObjects: [self dismissViewControllerButton], [self spacer], [self shareButton], [self spacer], [self backButton], [self spacer], [self refreshButton], nil]];
     
     [[self toolbar] setItems: [self itemsArray]];
     
-    _webView = [[WKWebView alloc] initWithFrame: CGRectMake(0, 20, screenWidth, screenHeight - 64)];
+    [self setWebView: [[WKWebView alloc] initWithFrame: CGRectMake(0, 20, screenWidth, screenHeight - 64)]];
     [[self webView] setCenter: CGPointMake(screenWidth/2, screenHeight/2 - 10)];
     [[self webView] setNavigationDelegate: self];
     
-    _urlToLoad = [NSURL URLWithString: [self url]];
-    _nsrequest = [NSURLRequest requestWithURL: [self urlToLoad]];
+    [self setUrlToLoad: [NSURL URLWithString: [self url]]];
+    [self setNsrequest: [NSURLRequest requestWithURL: [self urlToLoad]]];
     [[self webView] loadRequest: [self nsrequest]];
     [[self webView] setAlpha: 0.0];
     [[self view] addSubview: [self webView]];
@@ -131,7 +131,7 @@
 
 -(void) sharedButtonPressed
 {
-    _shareController = [[UIActivityViewController alloc] initWithActivityItems: @[[NSString stringWithFormat: @"Check out this page: %@ shared via %@.", [[self webView] URL], [self appName]]] applicationActivities: nil];
+    [self setShareController: [[UIActivityViewController alloc] initWithActivityItems: @[[NSString stringWithFormat: @"Check out this page: %@ shared via %@.", [[self webView] URL], [self appName]]] applicationActivities: nil]];
     [self presentViewController: [self shareController] animated: YES completion: nil];
 }
 
@@ -140,7 +140,7 @@
     [self dismissViewControllerAnimated: YES completion: nil];
 }
 
-//SPARKWEBVIE CLASS HELPER METHODS
+//SPARKWEBVIEW CLASS HELPER METHODS
 //Programmatically Designs UIColor Based On Hex String
 - (UIColor *)colorWithHexString:(NSString *)colorString
 {

@@ -24,7 +24,7 @@
 {
     // Do any additional setup after loading the view, typically from a nib.
     SparkWebview *webview = [[SparkWebview alloc] init];
-    [webview setUrl: @"http://google.com"];
+    [webview setUrl: @"http://sparkapps.com"];
     [webview setAppName: @"Spark"];
     [webview setToolBarColorWithHexString: @"#FF4300"];
     [webview setBackgroundColorWithHexString: @"#FF4300"];
