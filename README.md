@@ -1,6 +1,6 @@
 # README #
 
-This is Spark Apps, LLC's easily importable WKWebview ViewController class. It handles all code needed for smooth handling and fast importability to any project. This is designed for any iPhone screen, iPad screens are untested.
+This is Spark Apps, LLC's easily importable WKWebview ViewController class. It handles all code needed for smooth handling and fast importability to any project. This is designed for any device, iPhone or iPad.
 
 ### How do I get set up? ###
 
