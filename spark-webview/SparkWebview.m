@@ -26,7 +26,7 @@
 #define screenWidth self.view.frame.size.width
 #define screenHeight self.view.frame.size.height
 
-@interface SparkWebview ()
+@interface SparkWebview () <UIPopoverControllerDelegate>
 
 @property (nonatomic, readwrite, strong) NSURL *urlToLoad;
 @property (nonatomic, readwrite, strong) UIToolbar *toolbar;
@@ -42,6 +42,7 @@
 
 @property (nonatomic, readwrite, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, readwrite, strong) UIActivityViewController *shareController;
+@property (nonatomic, readwrite, strong) UIPopoverController *iPadPopoverController;
 
 @end
 
@@ -87,7 +88,9 @@
     [[self webView] loadRequest: [self nsrequest]];
     [[self webView] setAlpha: 0.0];
     [[self view] addSubview: [self webView]];
-
+    
+    //REQUIRED FOR IPAD COMPATIBILITY
+    [[self iPadPopoverController] setDelegate: self];
 }
 
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation: (WKNavigation *)navigation
@@ -132,7 +135,16 @@
 -(void) sharedButtonPressed
 {
     [self setShareController: [[UIActivityViewController alloc] initWithActivityItems: @[[NSString stringWithFormat: @"Check out this page: %@ shared via %@.", [[self webView] URL], [self appName]]] applicationActivities: nil]];
-    [self presentViewController: [self shareController] animated: YES completion: nil];
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+    {
+        [self setIPadPopoverController: [[UIPopoverController alloc] initWithContentViewController: [self shareController]]];
+        [[self iPadPopoverController] presentPopoverFromBarButtonItem: [self shareButton] permittedArrowDirections: UIPopoverArrowDirectionAny animated: YES];
+    }
+    else
+    {
+        [self presentViewController: [self shareController] animated: YES completion: nil];
+    }
 }
 
 -(void) dismissViewControllerButtonPressed
