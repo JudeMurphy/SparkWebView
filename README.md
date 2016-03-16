@@ -15,6 +15,8 @@ Use the following code to present SparkWebview:
 <br />[webview setBackgroundColorWithHexString: @"#FF4300"];
 <br />[self presentViewController: webview animated: YES completion: nil];
 
+<br />Be sure to set NSArbitraryLoads to YES in your project!
+
 Change whatever you would like for further customizablity.
 
 ### Contribution guidelines ###
@@ -24,3 +26,4 @@ Developed by Jude Murphy Copyright Spark Apps, LLC
 ### Who do I talk to? ###
 
 Contact jude.murphy@sparkapps.com if there are any known issues.
+
