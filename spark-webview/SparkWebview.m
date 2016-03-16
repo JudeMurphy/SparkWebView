@@ -42,7 +42,6 @@
 
 @property (nonatomic, readwrite, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, readwrite, strong) UIActivityViewController *shareController;
-@property (nonatomic, readwrite, strong) UIPopoverController *iPadPopoverController;
 
 @end
 
@@ -52,7 +51,7 @@
 {
     [self setNeedsStatusBarAppearanceUpdate];
     [[self view] setBackgroundColor: [self colorWithHexString: [self backgroundColorWithHexString]]];
-
+    
     [self setActivityIndicator: [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle: UIActivityIndicatorViewStyleWhite]];
     [[self activityIndicator] setCenter: CGPointMake(screenWidth/2, screenHeight/2)];
     [[self view] addSubview: [self activityIndicator]];
@@ -69,7 +68,7 @@
     [self setShareButton: [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemAction target:self action:@selector(sharedButtonPressed)]];
     [self setRefreshButton: [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemRefresh target: self action: @selector(refreshButtonPressed)]];
     [self setDismissViewControllerButton: [[UIBarButtonItem alloc] initWithTitle: @"Back" style: UIBarButtonItemStylePlain target:self action:@selector(dismissViewControllerButtonPressed)]];
-
+    
     [[self backButton] setTintColor: [UIColor whiteColor]];
     [[self shareButton] setTintColor: [UIColor whiteColor]];
     [[self refreshButton] setTintColor: [UIColor whiteColor]];
@@ -85,12 +84,13 @@
     
     [self setUrlToLoad: [NSURL URLWithString: [self url]]];
     [self setNsrequest: [NSURLRequest requestWithURL: [self urlToLoad]]];
-    [[self webView] loadRequest: [self nsrequest]];
     [[self webView] setAlpha: 0.0];
     [[self view] addSubview: [self webView]];
-    
-    //REQUIRED FOR IPAD COMPATIBILITY
-    [[self iPadPopoverController] setDelegate: self];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [[self webView] loadRequest: [self nsrequest]];
 }
 
 -(void)webView:(WKWebView *)webView didStartProvisionalNavigation: (WKNavigation *)navigation
@@ -136,15 +136,7 @@
 {
     [self setShareController: [[UIActivityViewController alloc] initWithActivityItems: @[[NSString stringWithFormat: @"Check out this page: %@ shared via %@.", [[self webView] URL], [self appName]]] applicationActivities: nil]];
     
-    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
-    {
-        [self setIPadPopoverController: [[UIPopoverController alloc] initWithContentViewController: [self shareController]]];
-        [[self iPadPopoverController] presentPopoverFromBarButtonItem: [self shareButton] permittedArrowDirections: UIPopoverArrowDirectionAny animated: YES];
-    }
-    else
-    {
-        [self presentViewController: [self shareController] animated: YES completion: nil];
-    }
+    [self presentViewController: [self shareController] animated: YES completion: nil];
 }
 
 -(void) dismissViewControllerButtonPressed
@@ -159,10 +151,10 @@
     colorString = [colorString stringByReplacingOccurrencesOfString:@"#" withString:@""];
     
     if (colorString.length == 3)
-        colorString = [NSString stringWithFormat:@"%c%c%c%c%c%c",
-                       [colorString characterAtIndex:0], [colorString characterAtIndex:0],
-                       [colorString characterAtIndex:1], [colorString characterAtIndex:1],
-                       [colorString characterAtIndex:2], [colorString characterAtIndex:2]];
+    colorString = [NSString stringWithFormat:@"%c%c%c%c%c%c",
+                   [colorString characterAtIndex:0], [colorString characterAtIndex:0],
+                   [colorString characterAtIndex:1], [colorString characterAtIndex:1],
+                   [colorString characterAtIndex:2], [colorString characterAtIndex:2]];
     
     if (colorString.length == 6)
     {
@@ -187,11 +179,6 @@
 - (BOOL)shouldAutorotate
 {
     return YES;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
-    return UIInterfaceOrientationMaskPortrait;
 }
 
 @end
