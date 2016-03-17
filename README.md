@@ -17,6 +17,10 @@ Use the following code to present SparkWebview:
 
 Change whatever you would like for further customizablity.
 
+### Having Issues? ###
+
+Be sure to set NSArbitraryLoads to YES in your project!
+
 ### Contribution guidelines ###
 
 Developed by Jude Murphy Copyright Spark Apps, LLC
@@ -24,7 +28,3 @@ Developed by Jude Murphy Copyright Spark Apps, LLC
 ### Who do I talk to? ###
 
 Contact jude.murphy@sparkapps.com if there are any known issues.
-
-### Having Issues? ###
-
-Be sure to set NSArbitraryLoads to YES in your project!
