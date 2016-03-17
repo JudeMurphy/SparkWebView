@@ -14,7 +14,6 @@ Use the following code to present SparkWebview:
 <br />[webview setToolBarColorWithHexString: @"#FF4300"];
 <br />[webview setBackgroundColorWithHexString: @"#FF4300"];
 <br />[self presentViewController: webview animated: YES completion: nil];
-
 <br />Be sure to set NSArbitraryLoads to YES in your project!
 <br />Change whatever you would like for further customizablity.
 
