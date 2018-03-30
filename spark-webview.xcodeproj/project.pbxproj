@@ -84,13 +84,9 @@
 		09AA529F1AABD73C005E3603 /* spark-webview */ = {
 			isa = PBXGroup;
 			children = (
-				09AA52A41AABD73C005E3603 /* AppDelegate.h */,
-				09AA52A51AABD73C005E3603 /* AppDelegate.m */,
-				09AA52AA1AABD73C005E3603 /* Main.storyboard */,
-				09AA52AD1AABD73C005E3603 /* Images.xcassets */,
-				09AA52AF1AABD73C005E3603 /* LaunchScreen.xib */,
-				0974BC6C1ACB3DE800A50630 /* SparkWebview.h */,
-				0974BC6D1ACB3DE800A50630 /* SparkWebview.m */,
+				A817020A206E784000457E14 /* AppDelegate */,
+				A817020B206E785600457E14 /* UI */,
+				A8170209206E783100457E14 /* SparkWebview */,
 				0974BC6E1ACB3DE800A50630 /* ViewController.h */,
 				0974BC6F1ACB3DE800A50630 /* ViewController.m */,
 				09AA52A01AABD73C005E3603 /* Supporting Files */,
@@ -122,6 +118,34 @@
 				09AA52BB1AABD73C005E3603 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A8170209206E783100457E14 /* SparkWebview */ = {
+			isa = PBXGroup;
+			children = (
+				0974BC6C1ACB3DE800A50630 /* SparkWebview.h */,
+				0974BC6D1ACB3DE800A50630 /* SparkWebview.m */,
+			);
+			name = SparkWebview;
+			sourceTree = "<group>";
+		};
+		A817020A206E784000457E14 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				09AA52A41AABD73C005E3603 /* AppDelegate.h */,
+				09AA52A51AABD73C005E3603 /* AppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		A817020B206E785600457E14 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				09AA52AF1AABD73C005E3603 /* LaunchScreen.xib */,
+				09AA52AA1AABD73C005E3603 /* Main.storyboard */,
+				09AA52AD1AABD73C005E3603 /* Images.xcassets */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
