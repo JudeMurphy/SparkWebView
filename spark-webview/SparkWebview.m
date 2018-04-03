@@ -88,6 +88,7 @@
     [[self view] addSubview: [self webView]];
 }
 
+// Modularize
 - (void)viewDidAppear:(BOOL)animated
 {
     [[self webView] loadRequest: [self nsrequest]];
@@ -127,6 +128,7 @@
     [[self webView] reload];
 }
 
+// Need to modularize outward
 -(void) backButtonPressed
 {
     [[self webView] goBack];
@@ -166,16 +168,19 @@
     return nil;
 }
 
+// Put into a helper method
 - (NSString *) getYourAppsName
 {
     return [[NSBundle bundleWithIdentifier:@"BundleIdentifier"] objectForInfoDictionaryKey:@"CFBundleExecutable"];
 }
+
 
 - (UIStatusBarStyle) preferredStatusBarStyle
 {
     return UIStatusBarStyleLightContent;
 }
 
+// Should put into a helper class
 - (BOOL)shouldAutorotate
 {
     return YES;

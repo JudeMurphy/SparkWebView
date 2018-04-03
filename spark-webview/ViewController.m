@@ -23,6 +23,7 @@
 - (void)viewDidAppear:(BOOL)animated
 {
     // Do any additional setup after loading the view, typically from a nib.
+    // Add some kind of readme.
     SparkWebview *webview = [[SparkWebview alloc] init];
     [webview setUrl: @"https://sparkapps.com"];
     [webview setAppName: @"Spark"];
